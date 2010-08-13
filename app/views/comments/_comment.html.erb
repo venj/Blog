@@ -1,0 +1,18 @@
+<% div_for comment do %>
+    <div class="avatar">
+        <%= image_tag comment.gravatar, :size => "48x48" %>
+    </div>
+    <div class="comment_body">
+        <div class="commenter">
+            <%= link_to comment.commenter, (comment.website || root_path) %>
+        </div>
+        <div class="comment_content">
+            <%= h comment.content %>
+        </div>
+        <% if current_user %>
+        <div class="delete_comment">
+            <%= link_to 'Destroy', [@post, comment], :confirm => 'Are you sure?', :method => :delete %>
+        </div>
+        <% end %>
+    </div>
+<% end %>

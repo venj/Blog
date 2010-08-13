@@ -1,0 +1,18 @@
+<div class="tag_post">
+    <h3><%= link_to post.title, "/#{post.url}" %></h3>
+    <div class="author_meta">
+        <span class="author"><span class="meta_name">Author:</span> <%= post.user.show_name %></span>, 
+        <span class="date">Post at: <%= post.created_at.strftime("%Y-%m-%d") -%></span>
+        <span class="comment_info">
+            <%= link_to pluralize(post.comments.count, "comment"), "/#{post.url}#comments" %>
+        </span>
+        <% if current_user %>
+        <span class="edit_meta">
+         | <%= link_to "Edit", edit_post_path(post) %>
+        </span>
+        <% end %>
+    </div>
+    <div class="post_content">
+        <%= post.short_content %>
+    </div>
+</div>

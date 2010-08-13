@@ -1,0 +1,31 @@
+<div class="post">
+<h2><%= link_to post.title, "/#{post.url}" %></h2>
+    <div class="aauthor_meta">
+        <span class="author"><span class="meta_name">Author:</span> <%= post.user.show_name %></span>, 
+        <span class="date">Post at: <%= post.created_at.strftime("%Y-%m-%d") -%></span>
+        <% if current_user %>
+        <span class="edit_meta">
+         | <%= link_to "Edit", edit_post_path(post) %>
+        </span>
+        <% end %>
+    </div>
+    <div class="post_content">
+        <%= post.content %>
+    </div>
+    <div class="post_meta">
+        <% if post.tags.size > 0 %>
+        <span class="tags">
+            <span class="meta_name">Tags:</span> <%= render :partial => "shared/tag", :collection => post.tags -%>
+        </span>
+        <% else %>
+        <span class="tags">No tags.</span>
+        <% end %>
+        <span class="comment_info">
+            <% unless post.comments.size > 0 %>
+             | <%= link_to "Be the first to comment.", "/#{post.url}" %>
+            <% else %>
+             | <%= link_to pluralize(post.comments.count, "comment"), "/#{post.url}#comments" %>
+            <% end %>
+        </span>
+    </div>
+</div>

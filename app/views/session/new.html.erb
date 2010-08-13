@@ -1,0 +1,10 @@
+<div id="login_form">
+    <h2>Login</h2>
+    <% form_tag session_path do %>
+    <table border="0" cellspacing="5" cellpadding="5">
+        <tr><td class="item_name"><%= label_tag :login %></td><td><%= text_field_tag :login %></td></tr>
+        <tr><td class="item_name"><%= label_tag :password %></td><td><%= password_field_tag :password %></td></tr>
+        <tr><td colspan="2"><%= submit_tag 'Login' %></td></tr>
+    </table>
+    <% end %>
+</div>

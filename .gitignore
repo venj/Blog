@@ -1,0 +1,9 @@
+log/*
+db/*.sqlite3
+log/*.log
+tmp/**/*
+*.tmproject
+*.esproject
+*~
+config/database.yml
+vendor/**/*

@@ -1,0 +1,3 @@
+page.insert_html :top, :comments_list, :partial => @comment
+page[@comment].visual_effect :highlight
+page[:new_comment].reset

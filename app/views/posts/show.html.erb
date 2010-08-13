@@ -1,0 +1,47 @@
+<div id="post_wapper">
+    <div id="main_post">
+    <h2 id="post_title"><%=h @post.title %></h2>
+        <div class="author_meta">
+            <span class="author"><span class="meta_name">Author:</span> <%= @post.user.show_name %></span>, 
+            <span class="date">Post at: <%= @post.created_at.strftime("%Y-%m-%d") -%></span>
+            <% if current_user %>
+            <span class="edit_meta">
+            <%= link_to "Edit", edit_post_path(@post) %>
+            </span>
+            <% end %>
+        </div>
+        <div class="post_content">
+            <%= @post.content %>
+        </div>
+        <div class="post_meta">
+            <% if @post.tags.size > 0 %>
+            <span class="tags">
+                <span class="meta_name">Tags:</span> <%= render :partial => "shared/tag", :collection => @post.tags -%>
+            </span>    
+            <% end %>
+        </div>
+    </div>
+    <div id="comments" name="comments">
+        <h3>Comments</h3>
+        <div id="comments_count">
+            <%= pluralize(@comments.count, "comment") %> in tatal.
+        </div>
+        <div id="comments_list">
+            <%= render @comments %>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div id="comment_form">
+    <% remote_form_for [@post, Comment.new] do |f| %>
+      <h4>Leave a comment: </h4>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr><td class="item_name"><%= f.label :commenter, "Name" %></td><td><%= f.text_field :commenter %></td></tr>
+        <tr><td class="item_name"><%= f.label :email %></td><td><%= f.text_field :email %></td></tr>
+        <tr><td class="item_name"><%= f.label :website %></td><td><%= f.text_field :website %></td></tr>
+        <tr><td></td><td><%= f.text_area :content, :size => "36x6" %></td></tr>
+        <tr><td colspan="2"><%= f.submit "Comment" %></td></tr>
+      </table>
+    <% end %>
+    </div>
+    
+</div>
