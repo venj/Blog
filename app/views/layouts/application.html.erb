@@ -12,7 +12,7 @@
 <body>
 <div id="wrapper">
     <div id="header">
-        <h1 id="site_name"><%= link_to "venj's Blog", root_path -%></h1><span id="subtitle">yet another dumb blog</span>
+        <h1 id="site_name"><%= link_to blog_title, root_path -%></h1><span id="subtitle"><%= subtitle -%></span>
     </div>
     <div id="content">
         <div id="info_area">
@@ -71,7 +71,7 @@
         <div class="clear"></div>
     </div>
     <div id="footer">
-        <p>Copyright&copy;<%= "2010-" if Time.now.year > 2010 %><%= Time.now.year %> Venj, All rights reserved. | Powered by OSS Technologies.</p>
+        <p>Copyright&copy;<%= "2010-" if Time.now.year > 2010 %><%= Time.now.year %> <%= admin.show_name %>, All rights reserved. | Powered by OSS Technologies.</p>
         <p>
             Best viewed in <a href="http://apple.com/safari/" target="_blank">Safari 4.0+</a>, <a href="http://www.google.com/chrome//" target="_blank">Chrome 4.0+</a>, <a href="http://www.mozilla.com/firefox/" target="_blank">Firefox 3.0+</a>, <a href="http://www.opera.com/browser/" target="_blank">Opera 10+</a>.
         </p>
