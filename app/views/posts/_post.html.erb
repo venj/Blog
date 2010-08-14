@@ -22,7 +22,7 @@
         <% end %>
         <span class="comment_info">
             <% unless post.comments.size > 0 %>
-             | <%= link_to "Be the first to comment.", "/#{post.url}" %>
+             | <%= link_to "Be the first to comment.", "/#{post.url}#comment_form" %>
             <% else %>
              | <%= link_to pluralize(post.comments.count, "comment"), "/#{post.url}#comments" %>
             <% end %>

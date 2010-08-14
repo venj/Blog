@@ -28,7 +28,18 @@ body {
     height: 100px;
     padding-top: 15px;
     text-align: center;
-    background-color: #CCCCCC;
+    background: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.2, #BBBBBB),
+        color-stop(0.7, #CCCCCC)
+    );
+    background:-moz-linear-gradient(
+        center bottom,
+        #BBBBBB 20%,
+        #CCCCCC 70%
+    );
     border-top-left-radius:10px 10px ;
     border-top-right-radius:10px 10px ;
     -moz-border-radius:10px 10px 0px 0px;
@@ -36,7 +47,7 @@ body {
 
 #content {
     margin-left: 2%;
-    padding: 2%;
+    padding: 2% 2% 0 2%;
 }
 
 #sidebar {
@@ -69,7 +80,18 @@ body {
     padding-top: 16px ;
     font-size: 12px;
     line-height: 1em;
-    background-color: #CCCCCC;
+    background: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.2, #BBBBBB),
+        color-stop(0.7, #CCCCCC)
+    );
+    background:-moz-linear-gradient(
+        center bottom,
+        #BBBBBB 20%,
+        #CCCCCC 70%
+    );
     border-bottom-left-radius:10px 10px ;
     border-bottom-right-radius:10px 10px ;
     -moz-border-radius:0px 0px 10px 10px;
@@ -197,9 +219,35 @@ input#post_title {
     font-size: 1.5em;
 }
 
-#notice {
+#notice, #not_found {
     color: green;
 }
-#error {
+#error, .js_error {
     color: red;
+}
+
+.fieldWithErrors {
+    display: block;
+}
+
+/*  for will_paginate */
+
+.pagination {
+    text-align:center;
+    padding-top: 10px;
+}
+
+.pagination .prev_page, .pagination  .next_page, 
+.pagination .current {
+    border: 1px #333333 solid;
+    padding: 4px;
+}
+
+.pagination a, .pagination a.prev_page, .pagination a.next_page {
+    border: 1px #1C7FDB solid;
+    padding: 4px;
+}
+
+.pagination a:hover {
+    text-decoration: underline;
 }

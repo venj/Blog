@@ -9,10 +9,10 @@ ActionController::Routing::Routes.draw do |map|
   map.login 'login', :controller => :session, :action => "new"
   map.logout 'logout', :controller => :session, :action => "destroy"
   map.root :controller => "posts"
-  map.connect ':id', :controller => "posts", :action => "show"
   map.resources :pictures
   map.resources :attachment_files
   
+  map.connect ':id', :controller => "posts", :action => "show"
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

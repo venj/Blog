@@ -1,2 +1,9 @@
-$("posts_list").update("<%= escape_javascript(render @posts) %>");
-$$(".pagination")[0].hide()
+if(<%=  @posts.count > 0 %>) {
+    $("posts_list").update("<%= escape_javascript(render @posts) %>");
+    $$(".pagination")[0].hide();
+}
+else {
+    $("posts_list").update("<p id='not_found'>Nothing found.</p>");
+    $$(".pagination")[0].hide();
+}
+

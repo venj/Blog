@@ -4,6 +4,8 @@ class Post < ActiveRecord::Base
   cattr_reader :per_page
   @@per_page = 6
   
+  validates_presence_of :title, :url, :content
+  
   belongs_to :user
   has_many :tags, :through => :taggings
   has_many :taggings, :dependent => :destroy

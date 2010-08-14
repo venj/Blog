@@ -4,6 +4,8 @@ require 'digest/md5'
 class Comment < ActiveRecord::Base
   belongs_to :post
   
+  validates_presence_of :commenter, :email, :content
+  
   def gravatar
     email_address = email.downcase
     hash = Digest::MD5.hexdigest(email_address)
