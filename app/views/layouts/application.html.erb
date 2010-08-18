@@ -27,30 +27,31 @@
         <div id="sidebar">
             <% if current_user %>
             <div class="widget">
-                <h3>Admin</h3>
+                <h3><%= t('layout.admin') %></h3>
                 <ul>
-                    <li><%= link_to "Edit info", edit_user_path  %></li>
-                    <li><%= link_to "New post", new_post_path %></li>
+                    <li><%= link_to t('layout.edit_info'), edit_user_path  %></li>
+                    <li><%= link_to t('layout.new_post'), new_post_path %></li>
+                    <li><%= link_to t('session.logout'), logout_path %></li>
                 </ul>
             </div>
             <% end %>
             <div class="widget">
-                <h3>Search</h3>
+                <h3><%= t('common.search') %></h3>
                 <% form_remote_tag :url => root_path,
                                    :html => {:method => :get, :id => "search_form"}, 
                                    :method => :get do %>
-                <%= text_field_tag :search %><%= submit_tag :search, :name => nil %>
+                <%= text_field_tag :search %><%= submit_tag t('common.search'), :name => nil %>
                 <% end %>
             </div>
             <div class="widget">
-                <h3>Subscribe</h3>
+                <h3><%= t('common.subscribe') %></h3>
                 <ul>
-                    <li><%= link_to (image_tag('/images/rss.png') + "Subscribe"), feed_path  %></li>
+                    <li><%= link_to (image_tag('/images/rss.png') + t('common.subscribe')), feed_path  %></li>
                     <li><%= link_to image_tag('/images/google.png'), "http://www.google.com/ig/add?source=bstp&feedurl=#{CGI.escape(feed_url)}" %></li>
                 </ul>
             </div>
             <div class="widget">
-                <h3>Latest Articles</h3>
+                <h3><%= t("layout.latest_articles") %></h3>
                 <ul>
                 <% latest_posts.each do |p| %>
                     <li><%= link_to p.title, "/#{p.url}"%></li>
@@ -58,7 +59,7 @@
                 </ul>
             </div>
             <div class="widget">
-                <h3>Latest Comments</h3>
+                <h3><%= t("layout.latest_comments") %></h3>
                 <ul>
                 <% latest_comments.each do |c| %>
                     <li><%= link_to c.commenter, c.website %> says, 
@@ -71,9 +72,9 @@
         <div class="clear"></div>
     </div>
     <div id="footer">
-        <p>Copyright&copy;<%= "2010-" if Time.now.year > 2010 %><%= Time.now.year %> <%= admin.show_name %>, All rights reserved. | Powered by OSS Technologies.</p>
+        <p><%=t("layout.copyright") -%>&copy;<%= "2010-" if Time.now.year > 2010 %><%= Time.now.year -%> <%= admin.show_name -%>, <%= t("layout.rights") -%> | <%= t("layout.oss") %>.</p>
         <p>
-            Best viewed in <a href="http://apple.com/safari/" target="_blank">Safari 4.0+</a>, <a href="http://www.google.com/chrome//" target="_blank">Chrome 4.0+</a>, <a href="http://www.mozilla.com/firefox/" target="_blank">Firefox 3.0+</a>, <a href="http://www.opera.com/browser/" target="_blank">Opera 10+</a>.
+            <%= t("layout.best_view") -%><a href="http://apple.com/safari/" target="_blank">Safari 4.0+</a>, <a href="http://www.google.com/chrome//" target="_blank">Chrome 4.0+</a>, <a href="http://www.mozilla.com/firefox/" target="_blank">Firefox 3.0+</a>, <a href="http://www.opera.com/browser/" target="_blank">Opera 10+</a>.
         </p>
     </div>
 </div>

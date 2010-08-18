@@ -50,7 +50,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to("/#{@post.url}", :notice => 'Post was successfully created.') }
+        format.html { redirect_to("/#{@post.url}", :notice => t('controller.created')) }
         format.xml  { render :xml => @post, :status => :created, :location => @post }
       else
         format.html { render :action => "new" }
@@ -66,7 +66,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        format.html { redirect_to("/#{@post.url}", :notice => 'Post was successfully updated.') }
+        format.html { redirect_to("/#{@post.url}", :notice => t('controller.updated')) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -82,7 +82,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to(posts_url) }
+      format.html { redirect_to(root_path, :notice => t('controller.deleted')) }
       format.xml  { head :ok }
     end
   end

@@ -2,11 +2,12 @@
     <div id="main_post">
     <h2 id="post_title"><%=h @post.title %></h2>
         <div class="author_meta">
-            <span class="author"><span class="meta_name">Author:</span> <%= @post.user.show_name %></span>, 
-            <span class="date">Post at: <%= @post.created_at.strftime("%Y-%m-%d") -%></span>
+            <span class="author"><span class="meta_name"><%= t('post.author') -%>:</span> <%= @post.user.show_name %></span>, 
+            <span class="date"><%= t('post.at') -%>: <%= @post.created_at.strftime("%Y-%m-%d") -%></span>
             <% if current_user %>
             <span class="edit_meta">
-            <%= link_to "Edit", edit_post_path(@post) %>
+            <%= link_to t('common.edit'), edit_post_path(@post) %>,
+                 <%= link_to t('common.destroy'), post_path(@post), :method => "delete", :confirm => t('comments.confirm') %>
             </span>
             <% end %>
         </div>
@@ -16,15 +17,15 @@
         <div class="post_meta">
             <% if @post.tags.size > 0 %>
             <span class="tags">
-                <span class="meta_name">Tags:</span> <%= render :partial => "shared/tag", :collection => @post.tags -%>
+                <span class="meta_name"><%= t("common.tags") -%>:</span> <%= render :partial => "shared/tag", :collection => @post.tags -%>
             </span>    
             <% end %>
         </div>
     </div>
     <div id="comments" name="comments">
-        <h3>Comments</h3>
+        <h3><%= t("post.comments") -%></h3>
         <div id="comments_count">
-            <%= pluralize(@comments.count, "comment") %> in tatal.
+            <%= t("common.comment", :count => @post.comments.count) %>.
         </div>
         <div id="comments_list">
             <%= render @comments %>
@@ -33,15 +34,14 @@
     </div>
     <div id="comment_form">
     <% remote_form_for [@post, Comment.new] do |f| %>
-      <h4>Leave a comment: </h4>
+      <h4><%= t('post.leave_comment') -%>: </h4>
       <table border="0" cellspacing="0" cellpadding="0">
-        <tr><td class="item_name"><%= f.label :commenter, "Name" %></td><td><%= f.text_field :commenter %></td></tr>
-        <tr><td class="item_name"><%= f.label :email %></td><td><%= f.text_field :email %></td></tr>
-        <tr><td class="item_name"><%= f.label :website %></td><td><%= f.text_field :website %></td></tr>
+        <tr><td class="item_name"><%= f.label :commenter, t("comments.commenter") %></td><td><%= f.text_field :commenter %></td></tr>
+        <tr><td class="item_name"><%= f.label :email, t('comments.email') %></td><td><%= f.text_field :email %></td></tr>
+        <tr><td class="item_name"><%= f.label :website, t('comments.site') %></td><td><%= f.text_field :website %></td></tr>
         <tr><td></td><td><%= f.text_area :content, :size => "36x6" %></td></tr>
-        <tr><td colspan="2"><%= f.submit "Comment" %></td></tr>
+        <tr><td colspan="2"><%= f.submit t('comments.comment') %></td></tr>
       </table>
     <% end %>
     </div>
-    
 </div>

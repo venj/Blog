@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   private
   def logged_in
     unless logged_in?
-      flash[:error] = "You are not allowed to do this."
+      flash[:error] = t('controller.not_allow')
       redirect_to login_path
     end
   end

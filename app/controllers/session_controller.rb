@@ -11,17 +11,17 @@ class SessionController < ApplicationController
     p @user
     if @user && @user.authenticate(hash[:password])
       session[:user_id] = @user.id
-      flash[:notice] = "Logged in."
+      flash[:notice] = t('controller.logged_in')
       redirect_to root_path
     else    
-      flash[:error] = "Log in failed."
+      flash[:error] = t('controller.login_fail')
       redirect_to root_path
     end
   end
   
   def destroy
     reset_session
-    flash[:notice] = "Logged out."
+    flash[:notice] = t('controller.logged_out')
     redirect_to root_path
   end
 end

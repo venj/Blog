@@ -5,16 +5,16 @@
         <%= f.text_field :title, {:size => "50%"} %>
       </p>
       <p>
-        Permalink: <%= root_url -%><%= f.text_field :url %>
+        <%= t("post.permalink") -%>: <%= root_url -%><%= f.text_field :url %>
       </p>
       <p>
         <%= f.cktext_area :content, :toolbar=>'Easy', :width => "95%", :swf_params=>{:assetable_type => 'User', :assetable_id => current_user.id} %>
       </p>
       <p>
-        <%= f.label :post_tags, "Tags" %>: <%= f.text_field :post_tags %>
+        <%= f.label :post_tags, t("common.tag") %>: <%= f.text_field :post_tags %>
       </p>
       <p>
-        <%= f.submit "Save" %>
+        <%= f.submit t("common.save") %>
       </p>
     <% end %>
 </div>

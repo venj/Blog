@@ -1,5 +1,5 @@
 <div id="tag_posts">
-    <h2>Tag: <%= h @tag.name %></h2>
+    <h2><%= t('common.tag') -%>: <%= h @tag.name %></h2>
     <%= render :partial => "post", :collection => @posts %>
     <%= will_paginate @posts %>
 </div>

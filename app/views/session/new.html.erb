@@ -1,10 +1,10 @@
 <div id="login_form">
-    <h2>Login</h2>
+    <h2><%= t('session.signin') -%></h2>
     <% form_tag session_path do %>
     <table border="0" cellspacing="5" cellpadding="5">
-        <tr><td class="item_name"><%= label_tag :login %></td><td><%= text_field_tag :login %></td></tr>
-        <tr><td class="item_name"><%= label_tag :password %></td><td><%= password_field_tag :password %></td></tr>
-        <tr><td colspan="2"><%= submit_tag 'Login' %></td></tr>
+        <tr><td class="item_name"><%= label_tag :login, t('session.login') %></td><td><%= text_field_tag :login %></td></tr>
+        <tr><td class="item_name"><%= label_tag :password, t('session.password') %></td><td><%= password_field_tag :password %></td></tr>
+        <tr><td colspan="2"><%= submit_tag t('session.signin') %></td></tr>
     </table>
     <% end %>
 </div>

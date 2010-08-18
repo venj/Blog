@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   
   def create
     @post = Post.find_by_id(params[:post_id]) || Post.find_by_url(params[:post_id])
-    params[:comment][:content].gsub!(/(\s|<\/?[^>]*>)/, "")
+    params[:comment][:content].gsub!(/(<\/?[^>]*>)/, "")
     @comment = @post.comments.create!(params[:comment])
     
     respond_to do |format|

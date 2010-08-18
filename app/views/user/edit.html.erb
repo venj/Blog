@@ -1,17 +1,17 @@
 <div id="user_form">
-    <h2>Change settings</h2>
+    <h2><%= t('user.change') -%></h2>
     <% form_for @user do |f| -%>
     <table border="0" cellspacing="5" cellpadding="5">
-        <tr><th colspan=2>Change basic information</th></tr>
-        <tr><td class="item_name"><%= f.label :nickname, "Nickname" %></td><td><%= f.text_field :nickname %></td></tr>
-        <tr><th colspan=2>Change password *</th></tr>
-        <tr><td class="item_name"><%= f.label :password, "Password" %></td><td><%= f.password_field :password %></td></tr>
-        <tr><td class="item_name"><%= f.label :password_confirmation, "Password Confirmation" %></td><td><%= f.password_field :password_confirmation %></td></tr>
+        <tr><th colspan=2><%= t('user.basic') -%></th></tr>
+        <tr><td class="item_name"><%= f.label :nickname, t('user.nickname') %></td><td><%= f.text_field :nickname %></td></tr>
+        <tr><th colspan=2><%= t('user.change_pw') -%>*</th></tr>
+        <tr><td class="item_name"><%= f.label :password, t('session.password') %></td><td><%= f.password_field :password %></td></tr>
+        <tr><td class="item_name"><%= f.label :password_confirmation, t('user.pw_confirm') %></td><td><%= f.password_field :password_confirmation %></td></tr>
     </table>
-      <%= f.submit "Update", :disable_with => 'Updateing...' %>
+      <%= f.submit t("common.update"), :disable_with => t('common.updating') %>
       <div class="tips">
         <p>
-            * If you don't want to change your password, leave it blank.
+            * <%= t("user.tip") -%>
         </p>
       </div>
     <% end -%>

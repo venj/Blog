@@ -3,3 +3,67 @@
 
 en:
   hello: "Hello world"
+  common:
+    destroy: Destroy
+    search: Search
+    subscribe: Subscribe
+    tag: Tag
+    tags: Tags
+    save: Save
+    edit: Edit
+    update: Update
+    updating: Updating...
+    comment:
+      one: 1 comment
+      other: "{{count}} comments" 
+  comments:
+    confirm: Are you sure?
+    commenter: Name
+    email: Email
+    site: Website
+    comment: Comment
+  layout:
+    admin: Admin
+    edit_info: Edit info
+    new_post: New post
+    latest_articles: Latest Articles
+    latest_comments: Latest Comments
+    copyright: Copyright
+    rights: All rights reserved.
+    oss: Powered by OSS Technologies
+    best_view: Best viewed in 
+  post:
+    permalink: Permalink
+    at: Posted at
+    author: Author
+    no_tag: No tags.
+    be_first: Be the first to comment.
+    not_found: Nothing found.
+    comments: Comments
+    leave_comment: Leave a comment
+  session:
+    login: Login
+    logout: Logout
+    password: Password
+    signin: Sign in
+  user:
+    change: Change settings
+    basic: Change basic information
+    nickname: Nickname
+    change_pw: Change password 
+    pw_confirm: Password Confirmation
+    tip: If you don't want to change your password, leave it blank.
+  helper:
+    blog: "'s Blog"
+    subtitle: "yet another small blog"
+  controller:
+    not_allow: You are not allowed to do this.
+    created: Post was successfully created.
+    updated: Post was successfully updated.
+    deleted: Post was successfully destroyed.
+    logged_in: Logged in.
+    logged_out: Logged out.
+    login_fail: Log in failed.
+    user_info_succ: User information updated!
+    user_info_fail: User information update failed!
+    

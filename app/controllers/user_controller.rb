@@ -8,9 +8,9 @@ class UserController < ApplicationController
   def update
     @user = User.find(session[:user_id])
     if @user.update_attributes(params[:user])
-      flash[:notice] = "User information updated!"
+      flash[:notice] = t('controller.user_info_succ')
     else
-      flash[:error] = "User information update failed!"
+      flash[:error] = t('controller.user_info_fail')
     end  
       redirect_to edit_user_path
   end

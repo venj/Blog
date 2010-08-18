@@ -17,11 +17,11 @@ module ApplicationHelper
   end
   
   def blog_title
-    "#{admin.show_name}'s Blog"
+    "#{admin.show_name}" + t('helper.blog')
   end
   
   def subtitle
-    "yet another tiny blog"
+    t('helper.subtitle')
   end
   
 end
