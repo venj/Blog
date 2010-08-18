@@ -1,0 +1,66 @@
+ja:
+  hello: "今日は、世界！"
+  common:
+    destroy: 削除
+    search: 検索
+    subscribe: フィード
+    tag: タグ
+    tags: タグ
+    save: 保存
+    edit: "編集"
+    update: 更新
+    updating: 更新中…
+    comment:
+      one: 1 コメント
+      other: "%{count} コメント" 
+  comments:
+    confirm: 確認しますか？
+    commenter: お名前
+    email: E-メール
+    site: ウェブサイト
+    comment: コメント
+  layout:
+    admin: 管理
+    edit_info: 設定の変更
+    new_post: 新しく記事を書く
+    latest_articles: 最近の記事
+    latest_comments: 最近のコメント
+    copyright: Copyright
+    rights: All rights reserved.
+    oss: Powered by OSS Technologies
+    best_view: Best viewed in 
+  post:
+    permalink: パーマリンク
+    at: 作成日
+    author: 作者
+    no_tag: タグはありません
+    be_first: 初めてのコメントを書く
+    not_found: Nothing found.
+    comments: コメント
+    leave_comment: コメントの投稿
+  session:
+    login: 登録
+    logout: ログアウト
+    password: パスワード
+    signin: 登録する
+  user:
+    change:  設定の変更
+    basic:  自分の設定の変更
+    nickname: Nickname
+    change_pw: パスワードの変更
+    pw_confirm: 確認し
+    tip: If you don't want to change your password, leave it blank.
+  helper:
+    blog: "のブログ"
+    subtitle: "僕の小さいなブログ"
+  controller:
+    not_allow: You are not allowed to do this.
+    created: Post was successfully created.
+    updated: Post was successfully updated.
+    deleted: Post was successfully destroyed.
+    logged_in: Logged in.
+    logged_out: Logged out.
+    login_fail: Log in failed.
+    user_info_succ: User information updated!
+    user_info_fail: User information update failed!
+  
