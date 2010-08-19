@@ -1,6 +1,6 @@
 <div class="post">
 <h2><%= link_to post.title, "/#{post.url}" %></h2>
-    <div class="aauthor_meta">
+    <div class="author_meta">
         <span class="author"><span class="meta_name"><%= t('post.author') -%>:</span> <%= post.user.show_name %></span>, 
         <span class="date"><%= t("post.at") -%>: <%= post.created_at.strftime("%Y-%m-%d") -%></span>
         <% if current_user %>

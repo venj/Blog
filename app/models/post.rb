@@ -20,7 +20,7 @@ class Post < ActiveRecord::Base
   end
   
   def text_content
-    content.gsub(/(\s|<\/?[^>]*>)/, "")
+    content.gsub(/(<\/?[^>]*>)/, "")
   end
   
   def short_content
