@@ -51,8 +51,8 @@ ja:
     pw_confirm: 確認し
     tip: If you don't want to change your password, leave it blank.
   helper:
-    blog: "のブログ"
-    subtitle: "僕の小さいなブログ"
+    blog: "中国でIT企業を経営している天狗の日々"
+    subtitle: "このBlogには、中国の片田舎でRailsやスマートフォン開発の企業を経営している<br />鹿児島出身の田舎もの（でもMBA）が、格闘している日々を記しています。"
   controller:
     not_allow: You are not allowed to do this.
     created: Post was successfully created.

@@ -17,7 +17,7 @@ module ApplicationHelper
   end
   
   def blog_title
-    "#{admin.show_name}" + t('helper.blog')
+    t('helper.blog')
   end
   
   def subtitle
