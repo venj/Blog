@@ -269,3 +269,7 @@ input#post_title {
     padding-top: 6px;
     padding-bottom: 4px;
 }
+
+.post_content {
+    overflow:hidden;
+}
