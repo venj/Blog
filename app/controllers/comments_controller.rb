@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_filter :logged_in, :only => :destroy
+  before_filter :logged_in, :only => [:destroy, :destroy_multiple]
   
   def create
     @post = Post.find_by_id(params[:post_id]) || Post.find_by_url(params[:post_id])
