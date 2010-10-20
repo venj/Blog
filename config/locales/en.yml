@@ -22,6 +22,12 @@ en:
     email: Email
     site: Website
     comment: Comment
+    under_review: 'Your comment is under review. Please be <br />patient and DO NOT submit it again.'
+    mark_as_spam: "Spam it"
+    mark_as_ham: "Not spam"
+    spam_deleted: "All spam deleted."
+    confirm_abs: "It's a DANGEROUS operation, ARE YOU ABSOLUTELY SURE???"
+    delete_all_spams: Delete all spam
   layout:
     admin: Admin
     edit_info: Edit info

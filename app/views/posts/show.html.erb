@@ -25,7 +25,7 @@
     <div id="comments" name="comments">
         <h3><%= t("post.comments") -%></h3>
         <div id="comments_count">
-            <%= t("common.comment", :count => @post.comments.count) %>.
+            <%= t("common.comment", :count => @comments.count) %>.
         </div>
         <div id="comments_list">
             <%= render @comments %>
@@ -40,7 +40,7 @@
         <tr><td class="item_name"><%= f.label :email, t('comments.email') %></td><td><%= f.text_field :email %></td></tr>
         <tr><td class="item_name"><%= f.label :website, t('comments.site') %></td><td><%= f.text_field :website %></td></tr>
         <tr><td></td><td><%= f.text_area :content, :size => "36x6" %></td></tr>
-        <tr><td colspan="2"><%= f.submit t('comments.comment') %></td></tr>
+        <tr><td colspan="2"><%= f.submit t('comments.comment'), :disabled => true %></td></tr>
       </table>
     <% end %>
     </div>

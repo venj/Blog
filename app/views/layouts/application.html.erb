@@ -31,6 +31,7 @@
                 <ul>
                     <li><%= link_to t('layout.edit_info'), edit_user_path  %></li>
                     <li><%= link_to t('layout.new_post'), new_post_path %></li>
+                    <li><%= link_to t('comments.delete_all_spams'), destroy_multiple_comments_path, :confirm => t("comments.confirm_abs"), :method => :delete %></li>
                     <li><%= link_to t('session.logout'), logout_path %></li>
                 </ul>
             </div>

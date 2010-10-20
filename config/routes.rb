@@ -2,9 +2,13 @@ ActionController::Routing::Routes.draw do |map|
   
   map.feed 'feed', :controller => :posts, :action => "index", :format => "atom"
   map.resources :tags, :only => [:index, :show]
-  map.resources :posts, :has_many => :comments
+  #map.resources :posts, :has_many => :comments
+  map.resources :posts do |post|
+    post.resources :comments, :member => {:approve => :put, :reject => :put}
+  end
   map.resource :user, :only => [:edit, :update], :controller => "user"
   map.resource :session, :only => [:new, :create, :destroy], :controller => "session"
+  map.resources :comments, :collection => { :destroy_multiple => :delete }, :only => :destroy_multiple
   
   map.login 'login', :controller => :session, :action => "new"
   map.logout 'logout', :controller => :session, :action => "destroy"

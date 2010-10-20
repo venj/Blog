@@ -22,10 +22,10 @@
         <span class="tags"><%= t('post.no_tag') -%></span>
         <% end %>
         <span class="comment_info">
-            <% unless post.comments.size > 0 %>
+            <% unless post.comments.approved.size > 0 %>
              | <%= link_to t('post.be_first'), "/#{post.url}#comment_form" %>
             <% else %>
-             | <%= link_to t("common.comment", :count => post.comments.count), "/#{post.url}#comments" %>
+             | <%= link_to t("common.comment", :count => post.comments.approved.count), "/#{post.url}#comments" %>
             <% end %>
         </span>
     </div>

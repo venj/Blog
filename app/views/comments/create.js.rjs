@@ -1,3 +1,9 @@
-page.insert_html :top, :comments_list, :partial => @comment
-page[@comment].visual_effect :highlight
-page[:new_comment].reset
+if @comment.approved
+  page.insert_html :top, :comments_list, :partial => @comment
+  page[@comment].visual_effect :highlight
+  page[:new_comment].reset
+else
+  page.insert_html :bottom, :comments_list, :partial => "notice"
+  page.select('.notice').last.visual_effect :highlight
+  page[:new_comment].reset
+end

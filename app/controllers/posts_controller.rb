@@ -17,7 +17,11 @@ class PostsController < ApplicationController
   # GET /posts/1.xml
   def show
     @post = Post.find_by_id(params[:id]) || Post.find_by_url(params[:id])
-    @comments = @post.comments.all(:order => "created_at DESC")
+    if logged_in?
+      @comments = @post.comments.all(:order => "created_at DESC")
+    else
+      @comments = @post.comments.approved(:order => "created_at DESC")
+    end
 
     respond_to do |format|
       format.html # show.html.erb

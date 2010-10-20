@@ -28,7 +28,7 @@ document.observe("dom:loaded", function() {
             }
             else {
                 if (email_span != null) {
-                    $("email_js_error").hide();
+                    email_span.hide();
                 }
             }
             if ($F("comment_email").strip().gsub(/\b[-A-Za-z0-9._]+@([A-Za-z0-9.-]+\.){1,4}[A-Za-z]{2,4}\b/,'') != "") {
@@ -39,12 +39,22 @@ document.observe("dom:loaded", function() {
                     email.insert({after: email_format_error});
                 }
                 if (email_format_span != null && !email_format_span.visible()) {
-                    if (email_span.visible()) {
+                    if (email_span != null && email_span.visible()) {
                         email_span.hide();
                     }
                     email_format_span.show();
                 }
             }
+            else {
+                if (email_format_span != null && email_format_span.visible()) {
+                    if (email_span != null && email_span.visible()) {
+                        email_span.hide();
+                    }
+                    email_format_span.hide();
+                }
+            }
+            
+            renew_button_status();
         });
 
         //Deal blank name
@@ -67,6 +77,8 @@ document.observe("dom:loaded", function() {
                     $("commenter_js_error").hide();
                 }
             }
+            
+            renew_button_status();
         });
 
         // Deal blank content
@@ -88,6 +100,8 @@ document.observe("dom:loaded", function() {
                     $("content_js_error").hide();
                 }
             }
+            
+            renew_button_status();
         });
 
         // Deal with website format
@@ -112,6 +126,31 @@ document.observe("dom:loaded", function() {
                     $("website_format_span").hide();
                 }
             }
+            
+            renew_button_status();
         });
+    }
+    
+    // Make the submit buttom clickable when all field is ok.
+    function renew_button_status() {
+        /*var visible = false;
+        var filled = false;
+        if ($$(".js_error") != null) {
+            $$(".js_error").each(function(elem) { 
+                if (elem.visible()) {
+                    visible = true;
+                }
+            })
+        }
+        if ( !($("comment_commenter").value.blank()) && !($("comment_email").value.blank()) && !($("comment_content").value.blank()) ) {
+            filled = true;
+        }
+        if (!visible && filled) {
+            $("comment_submit").enable();
+        }
+        else {
+            $("comment_submit").disable();
+        } */
+        $("comment_submit").enable();
     }
 })

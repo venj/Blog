@@ -9,7 +9,7 @@ module ApplicationHelper
   end
   
   def latest_comments
-    Comment.find(:all, :limit => 5, :order => "created_at DESC")
+    Comment.approved.find(:all, :limit => 5, :order => "created_at DESC")
   end
   
   def admin

@@ -273,3 +273,11 @@ input#post_title {
 .post_content {
     overflow:hidden;
 }
+
+.spam {
+    background-color: #EE9;
+}
+
+.notice {
+    color: red;
+}

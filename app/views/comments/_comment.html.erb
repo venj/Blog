@@ -1,4 +1,4 @@
-<% div_for comment do %>
+<% div_for comment, :class => (comment.approved ? "comment" : "spam") do %>
     <div class="avatar">
         <%= image_tag comment.gravatar, :size => "48x48" %>
     </div>
@@ -13,6 +13,12 @@
         <div class="delete_comment">
             <%= link_to t('common.destroy'), [@post, comment], :confirm => t("comments.confirm"), :method => :delete %>
         </div>
+        <% if comment.approved %>
+            <%= link_to t('comments.mark_as_spam'), reject_post_comment_path(@post, comment), :confirm => t("comments.confirm"), :method => :put %>
+        <% else %>
+            <%= link_to t('comments.mark_as_ham'), approve_post_comment_path(@post, comment), :confirm => t("comments.confirm"), :method => :put %>
+        <% end %>
+        
         <% end %>
     </div>
 <% end %>
