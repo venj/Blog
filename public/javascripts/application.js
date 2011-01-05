@@ -6,9 +6,9 @@
 document.observe("dom:loaded", function() {
     // Get rid of email errors
     if ($("comment_form") != null) {
-        email_error = new Element("span", {class: "js_error", id: "email_js_error"}).update("cannot be blank.");
+        email_error = new Element("span", {'class': "js_error", 'id': "email_js_error"}).update("cannot be blank.");
         email = $("comment_email");
-        email_format_error = new Element("span", {class: "js_error", id: "email_format_error"}).update("not a valid email.");
+        email_format_error = new Element("span", {'class': "js_error", 'id': "email_format_error"}).update("not a valid email.");
         $("comment_email").observe("blur", function() {
             email_span = $("email_js_error");
             email_format_span = $("email_format_error");
@@ -58,7 +58,7 @@ document.observe("dom:loaded", function() {
         });
 
         //Deal blank name
-        commenter_error = new Element("span", {class: "js_error", id: "commenter_js_error"}).update("cannot be blank.");
+        commenter_error = new Element("span", {'class': "js_error", 'id': "commenter_js_error"}).update("cannot be blank.");
         commenter = $("comment_commenter");
         $("comment_commenter").observe("blur", function() {
             if ($F("comment_commenter").strip().blank()) {
@@ -82,7 +82,7 @@ document.observe("dom:loaded", function() {
         });
 
         // Deal blank content
-        content_error = new Element("span", {class: "js_error", id: "content_js_error"}).update("cannot be blank.");
+        content_error = new Element("span", {'class': "js_error", 'id': "content_js_error"}).update("cannot be blank.");
         content = $("comment_content");
         $("comment_content").observe("blur", function() {
             if ($F("comment_content").strip().blank()) {
@@ -106,7 +106,7 @@ document.observe("dom:loaded", function() {
 
         // Deal with website format
         website = $("comment_website");
-        website_format_error = new Element("span", {class: "js_error", id: "website_format_error"}).update("not a valid website.");
+        website_format_error = new Element("span", {'class': "js_error", 'id': "website_format_error"}).update("not a valid website.");
         $("comment_website").observe("blur", function() {
             website_format_span = $("website_format_error");
             if ($F("comment_website").strip().gsub(/\b(http(s)?:\/\/)?([A-Za-z0-9.-]+\.){1,4}[A-Za-z]{2,4}(\/.*)?/,'') != "") {
