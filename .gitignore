@@ -8,3 +8,5 @@ tmp/**/*
 config/database.yml
 vendor/**/*
 db/schema.rb
+.DS_Store
+
