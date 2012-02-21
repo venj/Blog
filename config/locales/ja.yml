@@ -57,8 +57,8 @@ ja:
     pw_confirm: 確認し
     tip: If you don't want to change your password, leave it blank.
   helper:
-    blog: "中国でIT企業を経営している天狗の日々"
-    subtitle: "このBlogには、中国の片田舎でRailsやスマートフォン開発の企業を経営していたり、<br> 採用・人事コンサル、メルマガの発行管理、はたまたウイルス診断技術の事業開発など、<br>いろいろな事業に取り組んでいる天狗が、主に好きな中国ドラマについて、適当に書いています。<br>皆様からのコメお待ちしています。"
+    blog: "Your blog title"
+    subtitle: "Your blog subtitle"
   controller:
     not_allow: You are not allowed to do this.
     created: Post was successfully created.
@@ -69,4 +69,3 @@ ja:
     login_fail: Log in failed.
     user_info_succ: User information updated!
     user_info_fail: User information update failed!
-  
