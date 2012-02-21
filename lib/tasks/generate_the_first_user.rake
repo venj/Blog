@@ -2,7 +2,7 @@ namespace :blog do
   desc "Initialize the blog application"
   task :init => :environment do
     if User.all.blank?
-      User.create!(:name => 'koz', :nickname => "Koz", :email => "koz.masumitsu@gmail.com",
+      User.create!(:name => 'sample', :nickname => "Sample", :email => "sample@abc.com",
                   :password => "123456", :password_confirmation => "123456")
       user = User.first
       user.posts.create!(:title => "Hello world", 
